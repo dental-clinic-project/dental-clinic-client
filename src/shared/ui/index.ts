@@ -7,6 +7,7 @@ import Service from "./Service/Service";
 import SocialMedia from "./SocialMedia/SocialMedia";
 import Modal from "./Modal/Modal";
 import Breadcrumb from "./Breadcrumb/Breadcrumb";
+import TeamSlide from "./TeamSlide/TeamSlide";
 
 export {
   Form,
@@ -18,4 +19,5 @@ export {
   SocialMedia,
   Modal,
   Breadcrumb,
+  TeamSlide,
 };

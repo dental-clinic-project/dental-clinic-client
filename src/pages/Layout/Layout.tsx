@@ -11,7 +11,7 @@ const Layout = () => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      navigate("/");
+      navigate(location.pathname);
     } else {
       navigate("/authentication");
     }

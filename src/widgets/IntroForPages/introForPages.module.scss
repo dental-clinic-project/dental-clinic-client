@@ -8,9 +8,10 @@
   h1 {
     text-transform: uppercase;
     color: var(--color-text-secondary);
-    font-size: 4rem;
     text-align: center;
 
-    padding: 5.625rem 0;
+    @include adaptiveValue(padding-bottom, 90, 50);
+    @include adaptiveValue(padding-top, 90, 50);
+    @include adaptiveValue(font-size, 64, 38);
   }
 }
