@@ -6,5 +6,16 @@ import Logo from "./Logo/Logo";
 import Service from "./Service/Service";
 import SocialMedia from "./SocialMedia/SocialMedia";
 import Modal from "./Modal/Modal";
+import Breadcrumb from "./Breadcrumb/Breadcrumb";
 
-export { Form, LinkButton, Icon, Button, Logo, Service, SocialMedia, Modal };
+export {
+  Form,
+  LinkButton,
+  Icon,
+  Button,
+  Logo,
+  Service,
+  SocialMedia,
+  Modal,
+  Breadcrumb,
+};

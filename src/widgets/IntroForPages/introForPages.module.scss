@@ -1,0 +1,16 @@
+@import "src/app/styles/mixins.scss";
+
+.intro {
+  margin-top: toRem(147);
+
+  background-color: var(--bg-color-main);
+
+  h1 {
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    font-size: 4rem;
+    text-align: center;
+
+    padding: 5.625rem 0;
+  }
+}

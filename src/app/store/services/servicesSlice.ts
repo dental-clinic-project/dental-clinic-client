@@ -57,7 +57,7 @@ const servicesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(
-    getServices.fulfilled,
+        getServices.fulfilled,
         (state, action: PayloadAction<ApiResponse>) => {
           state.data = action.payload.services;
           state.status = "success";
@@ -71,7 +71,7 @@ const servicesSlice = createSlice({
         ) => {
           state.status = "error";
           if (action.error.message) {
-            state.errorMessage = action.error.message + ", try again!";
+            state.errorMessage = action.error.message;
           } else {
             state.errorMessage = "Failed to fetch, try again!";
           }

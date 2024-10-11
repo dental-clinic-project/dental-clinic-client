@@ -1,10 +1,18 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from "react-router-dom";
 
-import { Layout, Authentication, Home, AboutUs } from 'src/pages';
+import {
+  Layout,
+  Authentication,
+  Home,
+  AboutUs,
+  Services,
+  Reviews,
+  Consultation,
+} from "src/pages";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Layout />,
     children: [
       {
@@ -12,13 +20,25 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/about-us',
+        path: "/about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "/services",
+        element: <Services />,
+      },
+      {
+        path: "/consultation",
+        element: <Consultation />,
+      },
+      {
+        path: "/reviews",
+        element: <Reviews />,
       },
     ],
   },
   {
-    path: '/authentication',
+    path: "/authentication",
     element: <Authentication />,
   },
 ]);
