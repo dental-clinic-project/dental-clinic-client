@@ -4,7 +4,6 @@ import s from "./breadcrumb.module.scss";
 
 const Breadcrumb = () => {
   const location = useLocation();
-  console.log(location.pathname);
 
   return (
     <div className={s.breadcrumb}>

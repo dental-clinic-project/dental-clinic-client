@@ -7,6 +7,7 @@ interface TeamSlideProps {
   years_of_experience: number;
   quote: string;
   position: string;
+  imageUrl: string;
 }
 
 const TeamSlide: FC<TeamSlideProps> = ({
@@ -14,14 +15,14 @@ const TeamSlide: FC<TeamSlideProps> = ({
   years_of_experience,
   quote,
   position,
+  imageUrl,
 }) => {
   return (
     <div className={s.slide}>
       <div
         className={s.slide_img}
         style={{
-          backgroundImage:
-            "url(../../../../public/images/team-slider/doctor-1.webp)",
+          backgroundImage: `url(../../../../public/images/team-slider/${imageUrl})`,
         }}
       />
       <div className={s.slide_info}>
