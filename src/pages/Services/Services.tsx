@@ -1,5 +1,12 @@
-const Services = () => {
-  return <></>;
+import { InfoBlock, Services } from "src/widgets";
+
+const ServicesPage = () => {
+  return (
+    <>
+      <Services />
+      <InfoBlock />
+    </>
+  );
 };
 
-export default Services;
+export default ServicesPage;

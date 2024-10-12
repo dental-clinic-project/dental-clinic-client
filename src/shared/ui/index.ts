@@ -8,6 +8,7 @@ import SocialMedia from "./SocialMedia/SocialMedia";
 import Modal from "./Modal/Modal";
 import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import TeamSlide from "./TeamSlide/TeamSlide";
+import InfoBlockItem from "./InfoBlockItem/InfoBlockItem";
 
 export {
   Form,
@@ -20,4 +21,5 @@ export {
   Modal,
   Breadcrumb,
   TeamSlide,
+  InfoBlockItem,
 };

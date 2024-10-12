@@ -113,6 +113,10 @@
 
     &_body {
       width: 100%;
+
+      &-media {
+        display: none;
+      }
     }
   }
 }
