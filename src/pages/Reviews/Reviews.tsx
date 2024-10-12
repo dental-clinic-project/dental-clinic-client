@@ -1,9 +1,11 @@
-const Reviews = () => {
+import { Reviews } from "src/widgets";
+
+const ReviewsPage = () => {
   return (
     <>
-
+      <Reviews />
     </>
   );
 };
 
-export default Reviews;
+export default ReviewsPage;

@@ -30,8 +30,6 @@ interface InitialStateType {
   status: "loading" | "success" | "error";
 }
 
-
-
 interface FetchUserDataArgs {
   userData: UserDataType;
   type: "login" | "signup";
@@ -61,6 +59,7 @@ export const fetchUserData = createAsyncThunk(
 
     const dataJson = await response.json();
     localStorage.setItem("token", dataJson.token);
+    localStorage.setItem("fullName", dataJson.user.fullName);
 
     return dataJson;
   }

@@ -1,0 +1,16 @@
+@import "src/app/styles/mixins.scss";
+
+.list {
+  &_body {
+    display: grid;
+
+    @include adaptiveValue(row-gap, 35, 15);
+  }
+
+  &_button {
+    margin: 0 auto;
+
+    font-size: 1.25rem;
+    padding: 14px 47px;
+  }
+}
