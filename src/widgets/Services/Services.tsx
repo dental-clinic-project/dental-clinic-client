@@ -1,20 +1,13 @@
-import { FC, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "src/shared/hooks/reduxHook";
+import { FC } from "react";
 
-import { getServices } from "src/app/store/services/servicesSlice";
+import { useGetServicesQuery } from "src/app/store/services";
+
 import { Service } from "src/shared/ui";
 
 import s from "./services.module.scss";
 
 const Services: FC = () => {
-  const dispatch = useAppDispatch();
-  const data = useAppSelector((state) => state.services.data);
-  const errorMessage = useAppSelector((state) => state.services.errorMessage);
-  const status = useAppSelector((state) => state.services.status);
-
-  useEffect(() => {
-    dispatch(getServices());
-  }, [dispatch]);
+  const { data, status, error } = useGetServicesQuery(null);
 
   return (
     <section className={s.services}>
@@ -28,23 +21,24 @@ const Services: FC = () => {
             get a beautiful smile
           </p>
 
-          {status === "loading" && (
+          {status === "pending" && (
             <p className={s["services_body-warning"]}>Loading...</p>
           )}
-          {errorMessage && (
-            <p className={s["services_body-warning"]}>{errorMessage}</p>
+          {error && (
+            <p className={s["services_body-warning"]}>
+              Failed to fetching data...
+            </p>
           )}
 
           <div className={s.services_items}>
-            {data &&
-              data.map((item) => (
-                <Service
-                  key={item._id}
-                  path={item.path}
-                  service={item.service}
-                  description={item.description}
-                />
-              ))}
+            {data?.data?.services.map((item) => (
+              <Service
+                key={item._id}
+                path={item.path}
+                service={item.service}
+                description={item.description}
+              />
+            ))}
           </div>
         </div>
       </div>

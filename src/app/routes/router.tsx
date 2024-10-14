@@ -8,6 +8,7 @@ import {
   Services,
   Reviews,
   Consultation,
+  Service
 } from "src/pages";
 
 export const router = createBrowserRouter([
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/services/:service",
+        element: <Service />,
       },
       {
         path: "/consultation",

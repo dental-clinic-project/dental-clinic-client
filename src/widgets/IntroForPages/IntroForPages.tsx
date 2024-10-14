@@ -6,14 +6,18 @@ type PathNameType = {
   [key: string]: string;
 };
 
-const pathName: PathNameType = {
-  "/about-us": "About us",
-  "/services": "Services",
-  "/consultation": "Consultation",
-  "/reviews": "Reviews",
-};
-
 const IntroForPages = ({ path }: { path: string }) => {
+  const pathStr = path.split("/");
+
+  const pathName: PathNameType = {
+    "/about-us": "About us",
+    "/services": "Services",
+    "/consultation": "Consultation",
+    "/reviews": "Reviews",
+    ["/services/" + pathStr[2]]: "Service",
+  };
+
+  console.log(path);
   return (
     <section className={s.intro}>
       <h1>{pathName[path]}</h1>

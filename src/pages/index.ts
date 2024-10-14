@@ -6,6 +6,7 @@ import AboutUs from "./AboutUs/AboutUs";
 import Services from "./Services/Services";
 import Reviews from "./Reviews/Reviews";
 import Consultation from "./Consultation/Consultation";
+import Service from "./Service/Service";
 
 export {
   Authentication,
@@ -16,4 +17,5 @@ export {
   Services,
   Reviews,
   Consultation,
+  Service,
 };
