@@ -1,9 +1,10 @@
-import { Reviews } from "src/widgets";
+import { AddReview, Reviews } from "src/widgets";
 
 const ReviewsPage = () => {
   return (
     <>
       <Reviews />
+      <AddReview />
     </>
   );
 };

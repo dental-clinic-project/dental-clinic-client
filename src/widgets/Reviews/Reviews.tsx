@@ -6,7 +6,7 @@ const Reviews = () => {
     <section className={s.reviews}>
       <div className={s.reviews_container}>
         <div className={s.reviews_body}>
-          <h1>Reviews from our customers</h1>
+          <h2>Reviews from our customers</h2>
           <p className={s.reviews_subtitle}>
             Our clients are happy to leave feedback after treatment
           </p>

@@ -7,6 +7,7 @@ import IntroForPages from "./IntroForPages/IntroForPages";
 import Team from "./Team/Team";
 import InfoBlock from "./InfoBlock/InfoBlock";
 import Reviews from "./Reviews/Reviews";
+import AddReview from "./AddReview/AddReview";
 
 export {
   Footer,
@@ -18,4 +19,5 @@ export {
   Team,
   InfoBlock,
   Reviews,
+  AddReview,
 };
