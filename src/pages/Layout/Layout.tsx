@@ -15,7 +15,7 @@ const Layout = () => {
     } else {
       navigate("/authentication");
     }
-  }, []);
+  }, [location.pathname, navigate]);
 
   return (
     <div className={s.wrapper}>

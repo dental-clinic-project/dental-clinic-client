@@ -14,7 +14,7 @@ const Services: FC = () => {
 
   useEffect(() => {
     dispatch(getServices());
-  }, []);
+  }, [dispatch]);
 
   return (
     <section className={s.services}>

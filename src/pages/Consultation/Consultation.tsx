@@ -1,11 +1,5 @@
-import { Breadcrumb } from "src/shared/ui";
-
 const Consultation = () => {
-  return (
-    <>
-
-    </>
-  );
+  return <></>;
 };
 
 export default Consultation;
