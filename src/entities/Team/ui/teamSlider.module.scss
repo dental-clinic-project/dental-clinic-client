@@ -1,0 +1,22 @@
+@import "src/app/styles/mixins.scss";
+
+.team {
+  &_slider {
+    border-radius: toRem(50) toRem(150) toRem(50) toRem(50);
+    overflow: hidden;
+
+    @include adaptiveValue(height, 700, 440, 0, 767.98);
+  }
+
+  @media (width <= 767.98px) {
+    &_slider {
+      overflow: inherit;
+    }
+  }
+}
+
+.info_message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--color-text-main);
+}
