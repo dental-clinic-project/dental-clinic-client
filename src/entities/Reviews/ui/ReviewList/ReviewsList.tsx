@@ -15,10 +15,15 @@ const ReviewsList: FC = () => {
       <div className={s.list_body}>
         {status === "pending" && <p className={s.list_warning}>Loading...</p>}
         {error && <p className={s.list_warning}>Failed to fetching data...</p>}
-
+        
         {data?.data?.reviews.map((item) => (
-          <Review fullName={item.name} description={item.description} />
+          <Review
+            key={item._id}
+            fullName={item.name}
+            description={item.description}
+          />
         ))}
+
         <Button className={s.list_button}>SHOW MORE</Button>
       </div>
     </div>

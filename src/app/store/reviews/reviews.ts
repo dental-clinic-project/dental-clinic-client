@@ -29,6 +29,5 @@ export const reviewsApi = createApi({
 export const {
   useGetReviewsQuery,
   useAddReviewsMutation,
-
   useLazyGetReviewsQuery,
 } = reviewsApi;

@@ -7,13 +7,13 @@ const SocialMedia: FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={`${s.social} ${className}`}>
       <ul>
-        <a href="#">
+        <a href="https://www.instagram.com/tm_dentalway/">
           <Icon name="instagram" />
-          <p>@dental.clinic</p>
+          <p>dental.clinic</p>
         </a>
-        <a href="#">
+        <a href="https://www.facebook.com/">
           <Icon name="facebook" />
-          <p>@dental.clinic</p>
+          <p>dental.clinic</p>
         </a>
       </ul>
     </div>

@@ -1,23 +1,34 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode } from "react";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import s from './button.module.scss';
+import s from "./button.module.scss";
 
 interface ButtonProps {
   children: ReactNode;
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
-  handleClickButton?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  handleClickButton?: (any) => void;
 }
 
-const Button: FC<ButtonProps> = ({ className, children, type = 'submit', handleClickButton }) => {
+const Button: FC<ButtonProps> = ({
+  className,
+  children,
+  type = "submit",
+  handleClickButton,
+  disabled = false,
+}) => {
   return (
     <motion.button
-      whileHover={{ scale: 1.1, transition: { type: 'spring', stiffness: 400 } }}
+      whileHover={{
+        scale: 1.1,
+        transition: { type: "spring", stiffness: 400 },
+      }}
       className={`${s.button} ${className}`}
       type={type}
       onClick={handleClickButton}
+      disabled={disabled}
     >
       {children}
     </motion.button>

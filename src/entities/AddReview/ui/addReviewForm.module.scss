@@ -25,6 +25,10 @@
     text-transform: uppercase;
 
     padding: toRem(13) toRem(100);
+
+    &.loading {
+      background-color: var(--bg-color-button-disabled);
+    }
   }
 
   @media (width <= 768.98px) {

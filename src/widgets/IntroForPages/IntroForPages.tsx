@@ -17,7 +17,6 @@ const IntroForPages = ({ path }: { path: string }) => {
     ["/services/" + pathStr[2]]: "Service",
   };
 
-  console.log(path);
   return (
     <section className={s.intro}>
       <h1>{pathName[path]}</h1>
