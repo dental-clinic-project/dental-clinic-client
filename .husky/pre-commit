@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-# Запускаємо lint та тести
-npm run lint -- --fix 
-
-
