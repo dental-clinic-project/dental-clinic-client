@@ -1,0 +1,27 @@
+@import "src/app/styles/index.scss";
+@import "src/app/styles/mixins.scss";
+
+.team {
+  background-color: var(--bg-color-team);
+
+  padding-bottom: 2.75rem;
+  @include adaptiveValue(padding-top, 80, 30);
+  &_container {
+    max-width: $containerWidth + px;
+    padding: 0 $containerPadding + px;
+    margin: 0 auto;
+  }
+
+  &_body {
+    h2 {
+      margin-bottom: 1rem;
+
+      text-align: center;
+      @include adaptiveValue(font-size, 64, 48);
+    }
+  }
+
+  @media (width <= 544.98px) {
+    padding-bottom: 4.5rem;
+  }
+}

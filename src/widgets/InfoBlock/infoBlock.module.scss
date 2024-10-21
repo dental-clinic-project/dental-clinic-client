@@ -1,0 +1,44 @@
+@import "src/app/styles/index.scss";
+@import "src/app/styles/mixins.scss";
+
+.info {
+  background-color: var(--bg-color-team);
+
+  @include adaptiveValue(padding-top, 40, 15);
+
+  &_container {
+    max-width: $containerWidth + px;
+    padding: 0 $containerPadding + px;
+    margin: 0 auto;
+  }
+
+  &_body {
+    h2 {
+      margin-bottom: toRem(18);
+
+      text-align: center;
+      @include adaptiveValue(font-size, 48, 32);
+    }
+
+    &-text {
+      color: var(--color-text-main);
+      opacity: 60%;
+
+      @include adaptiveValue(margin-bottom, 60, 30);
+    }
+  }
+
+  &_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding-bottom: 2.5rem;
+  }
+
+  @media (width <= 767.98px) {
+    &_items {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 3rem;
+    }
+  }
+}

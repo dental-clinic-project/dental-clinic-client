@@ -1,0 +1,19 @@
+@import "src/app/styles/mixins.scss";
+
+.info {
+  text-align: center;
+  display: grid;
+  row-gap: toRem(18);
+
+  svg {
+    margin: 0 auto;
+  }
+
+  h3 {
+    @include adaptiveValue(font-size, 32, 24);
+  }
+
+  p {
+    @include adaptiveValue(font-size, 24, 16);
+  }
+}

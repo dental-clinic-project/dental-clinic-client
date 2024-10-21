@@ -1,0 +1,49 @@
+@import "src/app/styles/index.scss";
+@import "src/app/styles/mixins.scss";
+
+.service {
+  background-color: var(--bg-color-team);
+
+  @include adaptiveValue(padding-top, 58, 25);
+  @include adaptiveValue(padding-bottom, 70, 25);
+
+  &_container {
+    max-width: $containerWidth + px;
+    padding: 0 $containerPadding + px;
+    margin: 0 auto;
+  }
+
+  &_body {
+    h2 {
+      text-align: center;
+
+      margin-bottom: toRem(22);
+
+      @include adaptiveValue(font-size, 42, 24);
+    }
+
+    img {
+      width: 100%;
+
+      margin-bottom: toRem(33);
+    }
+
+    p {
+      color: var(--color-text-main);
+      opacity: 60%;
+
+      line-height: 1.2;
+      @include adaptiveValue(font-size, 24, 14);
+
+      &:not(:last-child) {
+        @include adaptiveValue(margin-bottom, 41, 15);
+      }
+    }
+  }
+}
+
+.warning {
+  font-size: 32px;
+
+  padding: 3rem;
+}
