@@ -4,6 +4,7 @@ import modalSlice from "./modal/modalSlice";
 import authSlice from "./auth/authSlice";
 import { servicesApi } from "./services";
 import { reviewsApi } from "./reviews";
+import { teamApi } from "./team";
 
 export const store = configureStore({
   reducer: {
@@ -11,11 +12,13 @@ export const store = configureStore({
     auth: authSlice,
     [servicesApi.reducerPath]: servicesApi.reducer,
     [reviewsApi.reducerPath]: reviewsApi.reducer,
+    [teamApi.reducerPath]: teamApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
       servicesApi.middleware,
-      reviewsApi.middleware
+      reviewsApi.middleware,
+      teamApi.middleware
     ),
 });
 

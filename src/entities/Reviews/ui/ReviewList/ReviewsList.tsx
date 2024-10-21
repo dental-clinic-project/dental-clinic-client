@@ -1,21 +1,23 @@
 import { FC } from "react";
 
 import Review from "../Review/Review";
-import { Button } from "src/shared/ui";
 
 import { useGetReviewsQuery } from "src/app/store/reviews";
+import { Loading } from "src/shared/ui";
 
 import s from "./reviewsList.module.scss";
 
 const ReviewsList: FC = () => {
-  const { data, status, error } = useGetReviewsQuery(null);
+  const { data, isLoading, isError } = useGetReviewsQuery(null);
 
   return (
     <div className={s.list}>
       <div className={s.list_body}>
-        {status === "pending" && <p className={s.list_warning}>Loading...</p>}
-        {error && <p className={s.list_warning}>Failed to fetching data...</p>}
-        
+        {isLoading && <Loading />}
+        {isError && (
+          <p className={s.list_warning}>Failed to fetching data.</p>
+        )}
+
         {data?.data?.reviews.map((item) => (
           <Review
             key={item._id}
@@ -23,8 +25,6 @@ const ReviewsList: FC = () => {
             description={item.description}
           />
         ))}
-
-        <Button className={s.list_button}>SHOW MORE</Button>
       </div>
     </div>
   );

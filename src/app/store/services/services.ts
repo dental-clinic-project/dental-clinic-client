@@ -10,7 +10,13 @@ export const servicesApi = createApi({
         method: "GET",
       }),
     }),
+    getServiceById: builder.query({
+      query: ({ id }) => ({
+        url: `/services/${id}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useGetServicesQuery } = servicesApi;
+export const { useGetServicesQuery, useGetServiceByIdQuery } = servicesApi;

@@ -2,26 +2,22 @@ import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 
-import { TeamSlide } from "src/shared/ui";
+import { useGetTeamQuery } from "src/app/store/team";
+import { TeamSlide, Loading } from "src/shared/ui";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "./teamSlider.scss";
 import s from "./teamSlider.module.scss";
-import { useGetTeam } from "../utilities/useGetTeam";
 
 const TeamSlider: FC = () => {
-  const { data, error, isLoading } = useGetTeam();
-
-  console.log(data, "data");
-  console.log(error, "error");
-  console.log(isLoading, "loading...");
+  const { data, isError, isLoading } = useGetTeamQuery(null);
 
   return (
     <div className={s.team_slider}>
-      {error && <p className={s.info_message}>Failed to fetching data...</p>}
+      {isError && <p className={s.info_message}>Failed to fetching data.</p>}
 
-      {isLoading && <p className={s.info_message}>Loading data...</p>}
+      {isLoading && <Loading />}
       <Swiper
         spaceBetween={0}
         slidesPerView={1}

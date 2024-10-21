@@ -2,12 +2,12 @@ import { FC } from "react";
 
 import { useGetServicesQuery } from "src/app/store/services";
 
-import { Service } from "src/shared/ui";
+import { Service, Loading } from "src/shared/ui";
 
 import s from "./services.module.scss";
 
 const Services: FC = () => {
-  const { data, status, error } = useGetServicesQuery(null);
+  const { data, isLoading, isError } = useGetServicesQuery(null);
 
   return (
     <section className={s.services}>
@@ -21,12 +21,10 @@ const Services: FC = () => {
             get a beautiful smile
           </p>
 
-          {status === "pending" && (
-            <p className={s["services_body-warning"]}>Loading...</p>
-          )}
-          {error && (
+          {isLoading && <Loading />}
+          {isError && (
             <p className={s["services_body-warning"]}>
-              Failed to fetching data...
+              Failed to fetching data.
             </p>
           )}
 

@@ -10,6 +10,7 @@ import Breadcrumb from "./Breadcrumb/Breadcrumb";
 import TeamSlide from "./TeamSlide/TeamSlide";
 import InfoBlockItem from "./InfoBlockItem/InfoBlockItem";
 import ReviewSocialMedia from "./ReviewSocialMedia/ReviewSocialMedia";
+import Loading from "./Loading/Loading";
 
 export {
   Form,
@@ -24,4 +25,5 @@ export {
   TeamSlide,
   InfoBlockItem,
   ReviewSocialMedia,
+  Loading,
 };
