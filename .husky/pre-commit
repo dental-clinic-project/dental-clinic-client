@@ -2,5 +2,3 @@
 
 # Запускаємо lint та тести
 npm run lint -- --fix 
-
-

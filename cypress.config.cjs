@@ -1,4 +1,5 @@
-import { defineConfig } from "cypress";
+// import { defineConfig } from "cypress";
+const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   projectId: "9haw1x",
