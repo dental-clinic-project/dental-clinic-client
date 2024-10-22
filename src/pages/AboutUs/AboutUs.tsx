@@ -1,7 +1,10 @@
+import { Schedule, Team } from "src/widgets";
+
 const AboutUs = () => {
   return (
     <>
-      <h1>ABOUT US</h1>
+      <Schedule />
+      <Team />
     </>
   );
 };

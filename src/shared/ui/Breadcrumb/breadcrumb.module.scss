@@ -1,0 +1,17 @@
+@import "src/app/styles/index.scss";
+@import "src/app/styles/mixins.scss";
+
+.breadcrumb {
+  width: 100vw;
+  background-color: var(--bg-color-item);
+
+  ul {
+    max-width: $containerWidth + px;
+    padding: toRem(23) $containerPadding + px;
+    margin: 0 auto;
+  }
+  a {
+    color: var(--color-text-secondary);
+    @include adaptiveValue(font-size, 20, 16);
+  }
+}

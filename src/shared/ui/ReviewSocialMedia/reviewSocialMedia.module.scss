@@ -1,0 +1,17 @@
+@import "src/app/styles/mixins.scss";
+
+.social {
+  display: flex;
+  column-gap: toRem(27);
+  width: 192px;
+
+  background-color: var(--bg-color-review);
+  border-radius: toRem(15);
+
+  padding: toRem(13) toRem(23);
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
