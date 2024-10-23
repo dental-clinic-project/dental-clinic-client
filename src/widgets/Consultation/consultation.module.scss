@@ -1,0 +1,14 @@
+@import "src/app/styles/mixins.scss";
+
+.consultation {
+  &_input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &_btn {
+    font-size: 1.25rem;
+    padding: toRem(14) toRem(66);
+  }
+}

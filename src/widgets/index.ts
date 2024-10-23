@@ -8,6 +8,7 @@ import Team from "./Team/Team";
 import InfoBlock from "./InfoBlock/InfoBlock";
 import Reviews from "./Reviews/Reviews";
 import AddReview from "./AddReview/AddReview";
+import Consultation from "./Consultation/Consultation";
 
 export {
   Footer,
@@ -20,4 +21,5 @@ export {
   InfoBlock,
   Reviews,
   AddReview,
+  Consultation,
 };

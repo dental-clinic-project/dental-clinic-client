@@ -15,7 +15,7 @@ const Icon = ({ name, className, animation = false }: IconProps) => {
       {!animation ? (
         <svg className={`${s.icon} ${s.logo} ${className}`} data-testid="icon">
           <use href={`${sprite}#${name}`} />
-        </svg>
+        </svg>  
       ) : (
         <motion.svg
           data-testid="icon"
