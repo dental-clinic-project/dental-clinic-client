@@ -5,7 +5,7 @@
 
   &_container {
     max-width: $containerMaxWidth + px;
-    
+
     margin: 0 auto;
   }
 
@@ -45,8 +45,9 @@
 
     &.reviews {
       order: 1;
-
+      
       text-align: left;
+      margin-left: 20px;
       @include adaptiveValue(padding-left, 122, 0, 0, 1280, 1064);
     }
   }
@@ -56,7 +57,7 @@
     margin-bottom: 1rem;
 
     max-width: toRem(514);
-    @include adaptiveValue(font-size, 64, 32, 0, 1024);
+    @include adaptiveValue(font-size, 58, 42, 0, 1075, 767.98);
   }
 
   &_button {
@@ -92,6 +93,7 @@
       &.reviews {
         text-align: center;
         padding: 1.5rem 1rem;
+        margin-left: 0;
       }
 
       h2 {

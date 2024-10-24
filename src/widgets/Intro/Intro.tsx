@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+// import { Autoplay } from "swiper/modules";
 
 import IntroSlide from "src/entities/Intro/ui/IntroSlide";
 
@@ -19,7 +19,7 @@ const Intro = () => {
           delay: 3500,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay]}
+        // modules={[Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
