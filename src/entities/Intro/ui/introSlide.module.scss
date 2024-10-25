@@ -61,10 +61,11 @@
   }
 
   &_button {
+    
+    
     padding: toRem(21) toRem(83);
     margin-bottom: toRem(257);
     @include adaptiveValue(margin-right, 101, 0, 0, 1319, 1115);
-
     @include adaptiveValue(font-size, 36, 24, 0, 1024);
   }
 

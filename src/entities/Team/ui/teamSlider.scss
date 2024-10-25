@@ -23,24 +23,11 @@
 
 .swiper-button-next {
   right: 30px;
-  //   @include adaptiveValue(right, 30, 5);
 }
 
 @media (width <= 544.98px) {
-  .swiper {
-    overflow: inherit;
-  }
   .swiper-button-next,
   .swiper-button-prev {
-    bottom: -3.7rem;
-    top: auto;
-  }
-
-  .swiper-button-prev {
-    left: 32%;
-  }
-
-  .swiper-button-next {
-    right: 32%;
+    display: none;
   }
 }
