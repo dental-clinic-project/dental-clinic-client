@@ -19,7 +19,7 @@ const Button: FC<ButtonProps> = ({
   handleClickButton,
   disabled = false,
 }) => {
-  return (
+  return disabled === false ? (
     <motion.button
       whileHover={{
         scale: 1.1,
@@ -28,10 +28,13 @@ const Button: FC<ButtonProps> = ({
       className={`${s.button} ${className}`}
       type={type}
       onClick={handleClickButton}
-      disabled={disabled}
     >
       {children}
     </motion.button>
+  ) : (
+    <button className={`${s.button} ${className}`} type={type} onClick={handleClickButton} disabled>
+      {children}
+    </button>
   );
 };
 

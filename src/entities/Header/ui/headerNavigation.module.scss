@@ -18,14 +18,13 @@
 }
 
 .link {
-  transition: border-bottom 0.3s;
   &.active {
     border-bottom: 3px solid black;
   }
 
   @media (any-hover: hover) {
     &:hover {
-      border-bottom: 3px solid black;
+      //  text-decoration: underline;
     }
   }
 }
@@ -67,7 +66,7 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;

@@ -10,5 +10,13 @@
   &_btn {
     font-size: 1.25rem;
     padding: toRem(14) toRem(66);
+    &.loading {
+      background-color: var(--bg-color-button-disabled);
+    }
   }
+}
+
+.warning {
+  margin-top: 2rem;
+  font-size: 2rem;
 }

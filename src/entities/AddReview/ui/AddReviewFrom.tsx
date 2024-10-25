@@ -13,20 +13,10 @@ const AddReviewFrom = () => {
   console.log(isError, "error...");
 
   return (
-    <form
-      className={s.form}
-      onSubmit={(e: FormEvent) => handleSendReview(e, mutationFn, textareaRef)}
-    >
-      <textarea
-        ref={textareaRef}
-        required
-        minLength={3}
-        placeholder="Add your review..."
-      />
+    <form className={s.form} onSubmit={(e: FormEvent) => handleSendReview(e, mutationFn, textareaRef)}>
+      <textarea ref={textareaRef} required minLength={3} placeholder="Add your review..." />
 
-      <Button
-        className={`${s.form_button} ${isLoading ? s.loading : undefined}`}
-      >
+      <Button className={`${s.form_button} ${isLoading ? s.loading : undefined}`} disabled={isLoading}>
         {!isLoading ? "SEND" : "SENDING..."}
       </Button>
     </form>

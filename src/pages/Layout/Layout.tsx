@@ -4,12 +4,14 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Footer, Header, IntroForPages } from "src/widgets";
 
 import s from "./layout.module.scss";
+import getItemWithExpiry from "src/entities/Consultation/utilites/getItemWithExpiry";
 
 const Layout = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
+    getItemWithExpiry("activeConsultation");
     if (localStorage.getItem("token")) {
       navigate(location.pathname);
     } else {
@@ -21,9 +23,7 @@ const Layout = () => {
     <div className={s.wrapper}>
       <Header />
       <main className={s.main}>
-        {location.pathname !== "/" && (
-          <IntroForPages path={location.pathname} />
-        )}
+        {location.pathname !== "/" && <IntroForPages path={location.pathname} />}
         <Outlet />
       </main>
       <Footer />
