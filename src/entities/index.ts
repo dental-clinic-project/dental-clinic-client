@@ -4,6 +4,7 @@ import IntroSlider from "./Intro/ui/IntroSlide";
 import TeamSlider from "./Team/ui/TeamSlider";
 import ReviewsList from "./Reviews/ui/ReviewList/ReviewsList";
 import AddReviewFrom from "./AddReview/ui/AddReviewFrom";
+import ConsultationInfo from "./Consultation/ui/ConsultationInfo";
 
 export {
   HeaderNavigation,
@@ -12,4 +13,5 @@ export {
   TeamSlider,
   ReviewsList,
   AddReviewFrom,
+  ConsultationInfo,
 };
