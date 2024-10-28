@@ -1,5 +1,4 @@
 import { FC } from "react";
-
 import Review from "../Review/Review";
 
 import { useGetReviewsQuery } from "src/app/store/reviews";
@@ -14,16 +13,10 @@ const ReviewsList: FC = () => {
     <div className={s.list}>
       <div className={s.list_body}>
         {isLoading && <Loading />}
-        {isError && (
-          <p className={s.list_warning}>Failed to fetching data.</p>
-        )}
+        {isError && <p className={s.list_warning}>Failed to fetching data.</p>}
 
-        {data?.data?.reviews.map((item) => (
-          <Review
-            key={item._id}
-            fullName={item.name}
-            description={item.description}
-          />
+        {data?.data?.reviews.map((item, index) => (
+          <Review key={item._id} index={index} fullName={item.name} description={item.description} />
         ))}
       </div>
     </div>

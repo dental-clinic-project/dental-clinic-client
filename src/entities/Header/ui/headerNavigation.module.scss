@@ -21,12 +21,6 @@
   &.active {
     border-bottom: 3px solid black;
   }
-
-  @media (any-hover: hover) {
-    &:hover {
-      //  text-decoration: underline;
-    }
-  }
 }
 
 @media (max-width: 1023.98px) {

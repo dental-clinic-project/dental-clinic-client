@@ -28,7 +28,7 @@ const Header: FC = () => {
       <div className={s.header_wrapper}>
         <Logo />
 
-        <HeaderNavigation isActiveMenu={isActive} />
+        <HeaderNavigation isActiveMenu={isActive} toggleMenu={toggleMenu} />
 
         <div className={s.header_actions}>
           <Button

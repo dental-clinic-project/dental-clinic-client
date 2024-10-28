@@ -41,9 +41,9 @@ const Services: FC = () => {
           {isError && <p className={s["services_body-warning"]}>Failed to fetching data.</p>}
 
           <motion.div
-            initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.4, once: true }}
+            viewport={{ amount: 0.2, once: true }}
+            initial="hidden"
             className={s.services_items}
           >
             {data?.data?.services.map((item, index) => (

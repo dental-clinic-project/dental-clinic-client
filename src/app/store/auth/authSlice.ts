@@ -1,9 +1,4 @@
-import {
-  createSlice,
-  createAsyncThunk,
-  PayloadAction,
-  SerializedError,
-} from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction, SerializedError } from "@reduxjs/toolkit";
 
 import type { UserDataType } from "src/shared/ui/Form/Form";
 
@@ -44,7 +39,7 @@ const initialState: InitialStateType = {
 export const fetchUserData = createAsyncThunk(
   "auth/fetchUserData",
   async ({ userData, type }: FetchUserDataArgs): Promise<FulfilledDataType> => {
-    const response = await fetch(`http://localhost:8000/api/v1/auth/${type}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/${type}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -75,19 +70,13 @@ const authSlice = createSlice({
         state.status = "loading";
         state.data = null;
       })
-      .addCase(
-        fetchUserData.fulfilled,
-        (state, action: PayloadAction<FulfilledDataType>) => {
-          state.status = "success";
-          state.data = { data: action.payload };
-        }
-      )
+      .addCase(fetchUserData.fulfilled, (state, action: PayloadAction<FulfilledDataType>) => {
+        state.status = "success";
+        state.data = { data: action.payload };
+      })
       .addCase(
         fetchUserData.rejected,
-        (
-          state,
-          action: PayloadAction<unknown, string, unknown, SerializedError>
-        ) => {
+        (state, action: PayloadAction<unknown, string, unknown, SerializedError>) => {
           state.status = "error";
           if (action.error.message) {
             state.errorMessage = action.error.message;

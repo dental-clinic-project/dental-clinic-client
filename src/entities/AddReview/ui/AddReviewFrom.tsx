@@ -13,7 +13,13 @@ const AddReviewFrom = () => {
   console.log(isError, "error...");
 
   return (
-    <form className={s.form} onSubmit={(e: FormEvent) => handleSendReview(e, mutationFn, textareaRef)}>
+    <form
+      className={s.form}
+      onSubmit={(e: FormEvent) => {
+        handleSendReview(e, mutationFn, textareaRef);
+        textareaRef.current!.value = "";
+      }}
+    >
       <textarea ref={textareaRef} required minLength={3} placeholder="Add your review..." />
 
       <Button className={`${s.form_button} ${isLoading ? s.loading : undefined}`} disabled={isLoading}>

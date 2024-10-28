@@ -24,7 +24,7 @@ const Layout = () => {
       <Header />
       <main className={s.main}>
         {location.pathname !== "/" && <IntroForPages path={location.pathname} />}
-        <Outlet />
+      <Outlet />
       </main>
       <Footer />
     </div>

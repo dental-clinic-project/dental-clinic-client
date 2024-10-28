@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 
 import IntroSlide from "src/entities/Intro/ui/IntroSlide";
 
@@ -19,31 +19,19 @@ const Intro = () => {
           delay: 3500,
           disableOnInteraction: false,
         }}
-        // modules={[Autoplay]}
+        modules={[Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
-          <IntroSlide
-            typeSlide="about-us"
-            title="Our doctors are professionals"
-            btnText="About us"
-          />
+          <IntroSlide typeSlide="about-us" title="Our doctors are professionals" btnText="About us" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <IntroSlide
-            typeSlide="services"
-            title="We use only modern medicine"
-            btnText="Services"
-          />
+          <IntroSlide typeSlide="services" title="We use only modern medicine" btnText="Services" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <IntroSlide
-            typeSlide="reviews"
-            title="Our patients are always satisfied"
-            btnText="Reviews"
-          />
+          <IntroSlide typeSlide="reviews" title="Our patients are always satisfied" btnText="Reviews" />
         </SwiperSlide>
       </Swiper>
     </section>
