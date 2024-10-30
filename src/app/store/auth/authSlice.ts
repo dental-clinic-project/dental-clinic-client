@@ -39,7 +39,7 @@ const initialState: InitialStateType = {
 export const fetchUserData = createAsyncThunk(
   "auth/fetchUserData",
   async ({ userData, type }: FetchUserDataArgs): Promise<FulfilledDataType> => {
-    const response = await fetch(`http://localhost:8000/api/v1/auth/${type}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/${type}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
