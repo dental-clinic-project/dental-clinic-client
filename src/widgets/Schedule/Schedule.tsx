@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button, SocialMedia } from "src/shared/ui";
+import { SocialMedia } from "src/shared/ui";
 
 import s from "./schedule.module.scss";
 
@@ -19,8 +19,6 @@ const animation = {
 };
 
 const Schedule = () => {
-  const navigate = useNavigate();
-
   return (
     <motion.section
       initial="hidden"
@@ -49,10 +47,10 @@ const Schedule = () => {
             </li>
           </motion.ul>
 
-          <motion.div custom={2} variants={animation}>
-            <Button handleClickButton={() => navigate("/consultation")} className={s["schedule_body-btn"]}>
+          <motion.div className={s["schedule_body-btn"]} custom={2} variants={animation}>
+            <Link to="/consultation">
               Consultation
-            </Button>
+            </Link>
           </motion.div>
 
           <SocialMedia className={s["schedule_body-media"]} />

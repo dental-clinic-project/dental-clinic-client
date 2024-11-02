@@ -1,8 +1,9 @@
 import { FC } from "react";
+
 import { NavLink } from "react-router-dom";
+import { Icon } from "src/shared/ui";
 
 import { Navigation as NavigationData } from "../model/NavigationModel";
-import { Icon } from "src/shared/ui";
 
 import s from "./headerNavigation.module.scss";
 
@@ -11,7 +12,7 @@ const HeaderNavigation: FC<{ isActiveMenu: boolean; toggleMenu: () => void }> = 
   toggleMenu,
 }) => {
   return (
-    <nav className={`${s.nav} ${isActiveMenu ? s.active : ""}`} data-testid="navigation">
+    <nav className={`${s.nav} ${isActiveMenu ? s.active : ""}`}>
       <Icon name="logoWhite" className={s.nav_logo} />
 
       <ul>

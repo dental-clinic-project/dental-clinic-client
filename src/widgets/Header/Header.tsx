@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 import { HeaderNavigation } from "src/entities";
 import { Button, Logo } from "src/shared/ui";
-
-import s from "./header.module.scss";
 import { makePhoneCall } from "src/features/Header/utilities/makePhoneCall";
 import { useOpenMenu } from "src/features/Header/hooks/useOpenMenu";
+
+import s from "./header.module.scss";
 
 const headerAnimtation = {
   hidden: {
@@ -35,6 +35,7 @@ const Header: FC = () => {
             handleClickButton={() => makePhoneCall("+380509634476")}
             className={s.header_button}
             type="button"
+            data-testid="button"
           >
             +380(50)963-4476
           </Button>

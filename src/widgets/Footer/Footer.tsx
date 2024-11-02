@@ -1,8 +1,8 @@
-import { MapComponent } from 'src/entities';
-import SocialMedia from 'src/shared/ui/SocialMedia/SocialMedia';
-import { Icon } from 'src/shared/ui';
+import { MapComponent } from "src/entities";
 
-import s from './footer.module.scss';
+import { Icon, SocialMedia } from "src/shared/ui";
+
+import s from "./footer.module.scss";
 
 const Footer = () => {
   return (
@@ -13,8 +13,8 @@ const Footer = () => {
         </div>
 
         <div className={s.footer_info}>
-          <div className={s['footer_info-contacts']}>
-            <p className={s['footer_info-title']}>Contacts:</p>
+          <div className={s["footer_info-contacts"]}>
+            <p className={s["footer_info-title"]}>Contacts:</p>
             <ul>
               <li>
                 <Icon name="phone-icon" />

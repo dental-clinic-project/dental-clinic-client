@@ -1,10 +1,10 @@
 import { FC, useRef, useState } from "react";
 import { Button, Loading } from "src/shared/ui";
+import { ConsultationInfo } from "src/entities";
 
 import { useHandleChoiceDate } from "src/features/Consultation/hooks/useHandleChoiceDate";
 
 import s from "./consultation.module.scss";
-import { ConsultationInfo } from "src/entities";
 
 const Consultation: FC = () => {
   const dateRef = useRef<HTMLInputElement | null>(null);

@@ -6,7 +6,7 @@ import { handleSendReview } from "../utilities";
 
 import s from "./addReviewForm.module.scss";
 
-const AddReviewFrom = () => {
+const AddReviewForm = () => {
   const [mutationFn, { isLoading, isError }] = useAddReviewsMutation({});
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -19,6 +19,7 @@ const AddReviewFrom = () => {
         handleSendReview(e, mutationFn, textareaRef);
         textareaRef.current!.value = "";
       }}
+      data-testid="form"
     >
       <textarea ref={textareaRef} required minLength={3} placeholder="Add your review..." />
 
@@ -29,4 +30,4 @@ const AddReviewFrom = () => {
   );
 };
 
-export default AddReviewFrom;
+export default AddReviewForm;

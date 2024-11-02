@@ -1,8 +1,8 @@
-import s from "./consultationInfo.module.scss";
+import s from "../ConsultationInfo/consultationInfo.module.scss";
 
 const Markers = ({ activeTime, consultations }: { activeTime: string; consultations: string[] }) => {
   return (
-    <div className={s["info_body-markers"]}>
+    <div className={s["info_body-markers"]} data-testid="markers">
       <div
         className={`${s["info_body-markers_marker"]} ${activeTime === "9:00" && s.isActive} ${
           consultations?.includes("9:00") && s.isBusy

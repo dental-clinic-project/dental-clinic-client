@@ -1,7 +1,7 @@
 import { ReviewSocialMedia } from "src/shared/ui";
+import { AddReviewFrom } from "src/entities";
 
 import s from "./addReview.module.scss";
-import { AddReviewFrom } from "src/entities";
 
 const AddReview = () => {
   return (

@@ -4,12 +4,11 @@ import { Autoplay } from "swiper/modules";
 import IntroSlide from "src/entities/Intro/ui/IntroSlide";
 
 import "swiper/css";
-import "swiper/css/navigation";
 
 import "./introSwiper.scss";
 import s from "./intro.module.scss";
 
-const Intro = () => {
+export const Intro = () => {
   return (
     <section className={s.intro}>
       <Swiper
@@ -37,5 +36,3 @@ const Intro = () => {
     </section>
   );
 };
-
-export default Intro;

@@ -80,11 +80,17 @@
     }
 
     &-btn {
-      font-size: 2.25rem;
-
-      padding: toRem(21) toRem(45);
-
       @include adaptiveValue(margin-bottom, 59, 15);
+      
+      a {
+        background-color: var(--bg-color-button);
+        border-radius: toRem(10);
+
+        color: var(--color-text-secondary);
+        font-size: 2.25rem;
+
+        padding: toRem(21) toRem(45);
+      }
     }
 
     &-media {

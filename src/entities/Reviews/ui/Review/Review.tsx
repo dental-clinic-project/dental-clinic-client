@@ -21,7 +21,7 @@ const reviewAnimate = {
   }),
 };
 
-const Review: FC<ReviewProps> = ({ fullName, description, index }) => {
+export const Review: FC<ReviewProps> = ({ fullName, description, index }) => {
   return (
     <motion.div
       whileInView="visible"
@@ -39,4 +39,3 @@ const Review: FC<ReviewProps> = ({ fullName, description, index }) => {
   );
 };
 
-export default Review;

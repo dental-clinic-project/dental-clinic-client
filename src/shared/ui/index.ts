@@ -11,6 +11,10 @@ import TeamSlide from "./TeamSlide/TeamSlide";
 import InfoBlockItem from "./InfoBlockItem/InfoBlockItem";
 import ReviewSocialMedia from "./ReviewSocialMedia/ReviewSocialMedia";
 import Loading from "./Loading/Loading";
+import IntroSlide from "src/entities/Intro/ui/IntroSlide";
+import LoginInputs from "./LoginInputs/LoginInputs";
+import SignupInputs from "./SignupInputs/SignupInputs";
+import TabsForm from "./TabsForm/TabsForm";
 
 export {
   Form,
@@ -26,4 +30,8 @@ export {
   InfoBlockItem,
   ReviewSocialMedia,
   Loading,
+  IntroSlide,
+  LoginInputs,
+  SignupInputs,
+  TabsForm,
 };

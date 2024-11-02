@@ -1,7 +1,7 @@
 import { FC } from "react";
-import Review from "../Review/Review";
 
 import { useGetReviewsQuery } from "src/app/store/reviews";
+import { Review } from "../Review/Review";
 import { Loading } from "src/shared/ui";
 
 import s from "./reviewsList.module.scss";

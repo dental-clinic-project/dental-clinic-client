@@ -1,21 +1,19 @@
-import { FC, FormEvent, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { FC, FormEvent, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
-import { useAppDispatch, useAppSelector } from 'src/shared/hooks/reduxHook';
-import { openModal } from 'src/app/store/modal/modalSlice';
-import { fetchUserData } from 'src/app/store/auth/authSlice';
+import { useAppDispatch, useAppSelector } from "src/shared/hooks/reduxHook";
+import { openModal } from "src/app/store/modal/modalSlice";
+import { fetchUserData } from "src/app/store/auth/authSlice";
 
-import LoginInputs from '../LoginInputs/LoginInputs';
-import SignupInputs from '../SignupInputs/SignupInputs';
-import TabsForm from '../TabsForm/TabsForm';
+import { LoginInputs, SignupInputs, TabsForm } from "..";
 
-import s from './form.module.scss';
+import s from "./form.module.scss";
 
 export type UserDataType = {
   [key: string]: FormDataEntryValue;
 };
 
-const Form: FC<{ typeForm: 'login' | 'signup' }> = ({ typeForm }) => {
+const Form: FC<{ typeForm: "login" | "signup" }> = ({ typeForm }) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const authData = useAppSelector((state) => state.auth.data);
@@ -23,7 +21,7 @@ const Form: FC<{ typeForm: 'login' | 'signup' }> = ({ typeForm }) => {
 
   useEffect(() => {
     if (authData) {
-      navigate('/');
+      navigate("/");
     }
   }, [authData, navigate]);
 
@@ -34,13 +32,13 @@ const Form: FC<{ typeForm: 'login' | 'signup' }> = ({ typeForm }) => {
     // перетворюємо масив на об'єкт властивостей
     const data = Object.fromEntries(fd.entries());
 
-    if (typeForm === 'login') {
+    if (typeForm === "login") {
       const userData: UserDataType = {
         email: data.email,
         password: data.password,
       };
 
-      dispatch(fetchUserData({ userData, type: 'login' }));
+      dispatch(fetchUserData({ userData, type: "login" }));
     } else {
       const userData: UserDataType = {
         email: data.email,
@@ -49,18 +47,18 @@ const Form: FC<{ typeForm: 'login' | 'signup' }> = ({ typeForm }) => {
         phone: data.phone,
       };
 
-      dispatch(fetchUserData({ userData, type: 'signup' }));
+      dispatch(fetchUserData({ userData, type: "signup" }));
     }
   };
 
   let content;
-  if (typeForm === 'login') {
+  if (typeForm === "login") {
     content = (
       <div className={s.inputs}>
         <LoginInputs />
       </div>
     );
-  } else if (typeForm === 'signup') {
+  } else if (typeForm === "signup") {
     content = (
       <div className={s.inputs}>
         <SignupInputs />
@@ -69,14 +67,14 @@ const Form: FC<{ typeForm: 'login' | 'signup' }> = ({ typeForm }) => {
   }
 
   return (
-    <form onSubmit={handleSubmitForm} className={s.form}>
+    <form onSubmit={handleSubmitForm} className={s.form} data-testid="form">
       {errorMessage && <p>{errorMessage}</p>}
-      <h2>{typeForm === 'login' ? 'Log in' : 'Sign up'}</h2>
+      <h2>{typeForm === "login" ? "Log in" : "Sign up"}</h2>
 
       {content}
 
-      {typeForm === 'signup' && (
-        <p className={s.link} onClick={() => dispatch(openModal('loginModal'))}>
+      {typeForm === "signup" && (
+        <p className={s.link} onClick={() => dispatch(openModal("loginModal"))}>
           have an account? <Link to="?mode=login">Log in</Link>
         </p>
       )}

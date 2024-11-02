@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { v4 } from "uuid";
 
-import Markers from "./Markers";
-import TimesForConsultations from "../model/TimesForConsultations";
-import handleClickTime from "../utilites/handleClickTime";
-import daysBetween from "../utilites/daysBetween";
-import setItemWithExpiry from "../utilites/setItemWithExpiry";
+import Markers from "../Markers/Markers";
 import { Button } from "src/shared/ui";
 import { useAddDateToConsultationsMutation } from "src/app/store/consultation";
+
+import TimesForConsultations from "../../model/TimesForConsultations";
+import handleClickTime from "../../utilites/handleClickTime";
+import daysBetween from "../../utilites/daysBetween";
+import setItemWithExpiry from "../../utilites/setItemWithExpiry";
 
 import s from "./consultationInfo.module.scss";
 
@@ -21,7 +22,7 @@ const ConsultationInfo = ({
   date: string;
 }) => {
   const [isActiveTime, setIsActiveTime] = useState<string>("00:00");
-  const [addDateToConsultations, { isLoading }] = useAddDateToConsultationsMutation();
+  const [addDateToConsultations, { isLoading, isError }] = useAddDateToConsultationsMutation();
 
   if (consultations?.includes(isActiveTime)) {
     setIsActiveTime("00:00");
@@ -64,6 +65,8 @@ const ConsultationInfo = ({
         {`The hour you want to come `}
         <span className={`${isActiveTime === "00:00" && s.info_text_active}`}>{isActiveTime}</span>
       </h3>
+
+      {isError && <p>Fetching data failed. Try again.</p>}
 
       <Button
         handleClickButton={handleClickConfirm}

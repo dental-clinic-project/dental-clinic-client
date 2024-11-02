@@ -1,4 +1,5 @@
 import { ReviewsList } from "src/entities";
+
 import s from "./reviews.module.scss";
 
 const Reviews = () => {

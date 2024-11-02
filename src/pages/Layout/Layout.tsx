@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 import { Footer, Header, IntroForPages } from "src/widgets";
+import getItemWithExpiry from "src/entities/Consultation/utilites/getItemWithExpiry";
 
 import s from "./layout.module.scss";
-import getItemWithExpiry from "src/entities/Consultation/utilites/getItemWithExpiry";
 
 const Layout = () => {
   const navigate = useNavigate();

@@ -1,26 +1,25 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useAppDispatch } from 'src/shared/hooks/reduxHook';
-import { openModal } from 'src/app/store/modal/modalSlice';
-import LinkButton from 'src/shared/ui/LinkButton/LinkButton';
+import { motion, AnimatePresence } from "framer-motion";
+import { useAppDispatch } from "src/shared/hooks/reduxHook";
+import { openModal } from "src/app/store/modal/modalSlice";
 
-import Icon from 'src/shared/ui/Icon/Icon';
+import { LinkButton, Icon } from "src/shared/ui";
+import { useWindowDimensions } from "src/shared/hooks/useWindowDimensions";
 
-import s from './start.module.scss';
-import { useWindowDimensions } from 'src/shared/hooks/useWindowDimensions';
+import s from "./start.module.scss";
 
 const Start = () => {
   const dispatch = useAppDispatch();
   const { width } = useWindowDimensions();
 
   const handleClickLink = () => {
-    dispatch(openModal('signupModal'));
+    dispatch(openModal("signupModal"));
   };
 
   return (
     <div className={s.start}>
       <div className={s.info}>
         <div className={s.info_wrapper}>
-          <Icon animation className={s['icon_black-star']} name="black-star" />
+          <Icon animation className={s["icon_black-star"]} name="black-star" />
           <Icon animation className={s.icon_pasta} name="pasta" />
           <Icon animation className={s.icon_toothbrush} name="toothbrush" />
           <Icon animation className={s.icon_instrument} name="instrument" />
@@ -28,8 +27,8 @@ const Start = () => {
           <AnimatePresence>
             <motion.h1
               className={s.title}
-              initial={'hidden'}
-              animate={'visible'}
+              initial={"hidden"}
+              animate={"visible"}
               variants={{
                 hidden: { opacity: 0, y: -20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } },
@@ -48,8 +47,8 @@ const Start = () => {
       {width > 767.98 ? (
         <motion.div
           className={s.image}
-          initial={'hidden'}
-          animate={'visible'}
+          initial={"hidden"}
+          animate={"visible"}
           variants={{
             hidden: { opacity: 0, scale: 0.9 },
             visible: { opacity: 1, scale: 1, transition: { duration: 0.6, delay: 0.2 } },
