@@ -25,7 +25,7 @@ const servicesAnimation = {
 
 const Service: FC<ServiceProps> = ({ service, description, path, index }) => {
   return (
-    <motion.div custom={index} variants={servicesAnimation} data-testid={service} className={s.service}>
+    <motion.div data-cy="service" custom={index} variants={servicesAnimation} data-testid={service} className={s.service}>
       <div>
         <h4 className={s.service_title}>{service}</h4>
         <p>{description}</p>

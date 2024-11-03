@@ -12,9 +12,10 @@ import s from "./teamSlider.module.scss";
 
 const TeamSlider: FC = () => {
   const { data, isError, isLoading } = useGetTeamQuery(null);
+  console.log(data, isError, isLoading);
 
   return (
-    <div className={s.team_slider}>
+    <div className={s.team_slider} data-cy="team-slider">
       {isError && <p className={s.info_message}>Failed to fetching data.</p>}
 
       {isLoading && <Loading />}

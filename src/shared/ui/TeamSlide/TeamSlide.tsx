@@ -18,7 +18,7 @@ const TeamSlide: FC<TeamSlideProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className={s.slide} data-testid="teamSlide">
+    <div className={s.slide} data-testid="teamSlide" data-cy="team-slide">
       <div
         className={s.slide_img}
         style={{

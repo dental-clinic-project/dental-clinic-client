@@ -27,6 +27,7 @@ const Services: FC = () => {
       whileInView="visible"
       viewport={{ amount: 0.2, once: true }}
       className={s.services}
+      data-cy="services"
     >
       <div className={s.services_container}>
         <div className={s.services_body}>

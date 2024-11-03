@@ -40,7 +40,7 @@ const Header: FC = () => {
             +380(50)963-4476
           </Button>
 
-          <button onClick={() => toggleMenu()} className={`${s.header_menu} ${isActive ? s.active : ""}`}>
+          <button data-cy="burger-menu" onClick={() => toggleMenu()} className={`${s.header_menu} ${isActive ? s.active : ""}`}>
             <span></span>
           </button>
         </div>

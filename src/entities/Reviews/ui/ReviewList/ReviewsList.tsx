@@ -10,7 +10,7 @@ const ReviewsList: FC = () => {
   const { data, isLoading, isError } = useGetReviewsQuery(null);
 
   return (
-    <div className={s.list}>
+    <div className={s.list} data-cy="reviews">
       <div className={s.list_body}>
         {isLoading && <Loading />}
         {isError && <p className={s.list_warning}>Failed to fetching data.</p>}

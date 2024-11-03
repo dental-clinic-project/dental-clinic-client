@@ -4,7 +4,7 @@ import type { Review, NewReview } from "./reviews.types";
 
 export const reviewsApi = createApi({
   reducerPath: "reviewsApi",
-  baseQuery: fetchBaseQuery({ baseUrl: process.env.VITE_API_BASE_URL + '/api/v1' }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.VITE_API_BASE_URL }),
   tagTypes: ["Reviews"],
   endpoints: (builder) => ({
     getReviews: builder.query({
@@ -26,8 +26,4 @@ export const reviewsApi = createApi({
   refetchOnMountOrArgChange: 120,
 });
 
-export const {
-  useGetReviewsQuery,
-  useAddReviewsMutation,
-  useLazyGetReviewsQuery,
-} = reviewsApi;
+export const { useGetReviewsQuery, useAddReviewsMutation, useLazyGetReviewsQuery } = reviewsApi;

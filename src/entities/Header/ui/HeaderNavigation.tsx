@@ -12,7 +12,7 @@ const HeaderNavigation: FC<{ isActiveMenu: boolean; toggleMenu: () => void }> = 
   toggleMenu,
 }) => {
   return (
-    <nav className={`${s.nav} ${isActiveMenu ? s.active : ""}`}>
+    <nav data-cy="header-navigation" className={`${s.nav} ${isActiveMenu ? s.active : ""}`}>
       <Icon name="logoWhite" className={s.nav_logo} />
 
       <ul>

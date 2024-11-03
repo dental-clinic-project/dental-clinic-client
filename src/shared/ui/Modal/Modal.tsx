@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({ title, children, modalId }) => {
   return (
     modal &&
     createPortal(
-      <div role="dialog" aria-label="modal" aria-modal="true" className={s.modal}>
+      <div data-cy="modal" role="dialog" aria-label="modal" aria-modal="true" className={s.modal}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}

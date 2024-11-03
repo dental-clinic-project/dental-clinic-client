@@ -30,6 +30,7 @@ export const Review: FC<ReviewProps> = ({ fullName, description, index }) => {
       custom={index}
       variants={reviewAnimate}
       className={s.review}
+      data-cy="review"
     >
       <div className={s.review_body}>
         <p className={s.review_name}>{fullName}</p>
